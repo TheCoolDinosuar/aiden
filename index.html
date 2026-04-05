@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to Be Like Jung Yuchan</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <nav class="topbar">
+          <span class="brand">YUCHAN MODE</span>
+
+          <div class="topbar-actions">
+            <a class="ghost-link" href="#playbook" data-i18n="nav.playbook">Open the playbook</a>
+
+            <div class="lang-switch" aria-label="Language switcher">
+              <button class="lang-button is-active" data-lang="en" type="button">EN</button>
+              <button class="lang-button" data-lang="ko" type="button">KO</button>
+            </div>
+          </div>
+        </nav>
+
+        <div class="hero-grid">
+          <section class="hero-copy">
+            <p class="eyebrow" data-i18n="hero.eyebrow">A confidence manual</p>
+            <h1 data-i18n="hero.title">How to be like Jung Yuchan</h1>
+            <p class="lede" data-i18n="hero.lede">
+              Not by becoming somebody else. By building the kind of presence
+              that feels calm, stylish, disciplined, and impossible to ignore.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="#playbook" data-i18n="hero.start">Start here</a>
+              <button class="button button-secondary" id="mantra-button" type="button" data-i18n="hero.mantraButton">
+                Give me a Yuchan mantra
+              </button>
+            </div>
+
+            <p class="mantra-card" id="mantra-output">
+              Move with intention. Speak less. Mean more.
+            </p>
+          </section>
+
+          <aside class="hero-panel">
+            <div class="portrait-frame">
+              <img class="portrait-image" src="yuchan.jpg" alt="Jung Yuchan portrait" />
+            </div>
+
+            <div class="panel-copy">
+              <p class="panel-label" data-i18n="hero.energyLabel">The energy</p>
+              <ul class="energy-list">
+                <li data-i18n="hero.energy1">Look composed before you feel composed.</li>
+                <li data-i18n="hero.energy2">Practice until confidence looks effortless.</li>
+                <li data-i18n="hero.energy3">Choose taste over noise.</li>
+                <li data-i18n="hero.energy4">Let consistency create the aura.</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </header>
+
+      <main>
+        <section class="principles" id="playbook">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="playbook.eyebrow">The playbook</p>
+            <h2 data-i18n="playbook.title">Four things to train every day</h2>
+          </div>
+
+          <div class="card-grid">
+            <article class="card">
+              <span class="card-number">01</span>
+              <h3 data-i18n="cards.presence.title">Presence</h3>
+              <p data-i18n="cards.presence.body">
+                Stand straighter. Slow your movements. Make eye contact. The
+                fastest way to look magnetic is to stop looking rushed.
+              </p>
+            </article>
+
+            <article class="card">
+              <span class="card-number">02</span>
+              <h3 data-i18n="cards.style.title">Style</h3>
+              <p data-i18n="cards.style.body">
+                Pick a clean silhouette, a signature color, and one detail that
+                feels sharp. Repeat it until it becomes your thing.
+              </p>
+            </article>
+
+            <article class="card">
+              <span class="card-number">03</span>
+              <h3 data-i18n="cards.discipline.title">Discipline</h3>
+              <p data-i18n="cards.discipline.body">
+                Wake up a little earlier. Finish what you start. Practice even
+                when nobody is watching. Charm lands harder when it has a
+                backbone.
+              </p>
+            </article>
+
+            <article class="card">
+              <span class="card-number">04</span>
+              <h3 data-i18n="cards.mystique.title">Mystique</h3>
+              <p data-i18n="cards.mystique.body">
+                You do not need to explain every thought. Keep some silence.
+                Let people lean in. Let your actions do part of the talking.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="routine">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="routine.eyebrow">Daily routine</p>
+            <h2 data-i18n="routine.title">Your 7-day upgrade</h2>
+          </div>
+
+          <div class="routine-layout">
+            <div class="routine-copy">
+              <p data-i18n="routine.body">
+                Becoming more like the version of yourself you admire is mostly
+                repetition. Keep the routine simple enough to actually follow.
+              </p>
+
+              <ol class="checklist">
+                <li data-i18n="routine.step1">Choose one outfit formula and wear it confidently.</li>
+                <li data-i18n="routine.step2">Practice posture for two minutes in the mirror.</li>
+                <li data-i18n="routine.step3">Speak 10% slower in every conversation.</li>
+                <li data-i18n="routine.step4">Do one difficult thing before scrolling.</li>
+                <li data-i18n="routine.step5">Leave one room with stronger energy than you entered with.</li>
+              </ol>
+            </div>
+
+            <div class="quote-block">
+              <p class="quote" data-i18n="routine.quote">
+                "Don't copy the face. Copy the focus."
+              </p>
+              <p class="quote-note" data-i18n="routine.note">
+                The goal is not imitation. It is refinement.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="generator">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="mood.eyebrow">Mood switch</p>
+            <h2 data-i18n="mood.title">Pick the version of you you want today</h2>
+          </div>
+
+          <div class="mode-picker">
+            <label for="mode-select" data-i18n="mood.label">Today I want to feel:</label>
+            <select id="mode-select">
+              <option value="composed" data-i18n="mood.optionComposed">Composed</option>
+              <option value="sharp" data-i18n="mood.optionSharp">Sharp</option>
+              <option value="magnetic" data-i18n="mood.optionMagnetic">Magnetic</option>
+              <option value="disciplined" data-i18n="mood.optionDisciplined">Disciplined</option>
+            </select>
+          </div>
+
+          <div class="mode-result" id="mode-result">
+            Wear something clean, breathe before you speak, and let stillness
+            do some of the work.
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
