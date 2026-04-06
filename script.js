@@ -2,11 +2,21 @@ const copy = {
   en: {
     "nav.playbook": "Open the playbook",
     "hero.eyebrow": "A confidence manual",
-    "hero.title": "How to be like Jung Yuchan",
+    "hero.kicker": "Be Like",
+    "hero.title": "Jung Yuchan",
     "hero.lede":
       "Not by becoming somebody else. By building the kind of presence that feels calm, stylish, disciplined, and impossible to ignore.",
     "hero.start": "Start here",
     "hero.mantraButton": "Give me a Yuchan mantra",
+    "hero.stat1Value": "AURA",
+    "hero.stat1Label": "locked in",
+    "hero.stat2Value": "STYLE",
+    "hero.stat2Label": "clean and sharp",
+    "hero.stat3Value": "FOCUS",
+    "hero.stat3Label": "all the way up",
+    "hero.tag1": "idol focus",
+    "hero.tag2": "main character energy",
+    "hero.tag3": "epic mode",
     "hero.energyLabel": "The energy",
     "hero.energy1": "Look composed before you feel composed.",
     "hero.energy2": "Practice until confidence looks effortless.",
@@ -48,11 +58,21 @@ const copy = {
   ko: {
     "nav.playbook": "가이드 열기",
     "hero.eyebrow": "자신감 매뉴얼",
-    "hero.title": "정유찬처럼 되는 법",
+    "hero.kicker": "정유찬처럼",
+    "hero.title": "되는 법",
     "hero.lede":
       "누군가를 그대로 따라 하는 게 아닙니다. 차분함, 스타일, 자기관리, 그리고 시선을 끄는 존재감을 스스로 만드는 것입니다.",
     "hero.start": "바로 시작하기",
     "hero.mantraButton": "유찬 모드 한마디",
+    "hero.stat1Value": "아우라",
+    "hero.stat1Label": "완전히 장착",
+    "hero.stat2Value": "스타일",
+    "hero.stat2Label": "깔끔하고 날카롭게",
+    "hero.stat3Value": "집중력",
+    "hero.stat3Label": "끝까지 끌어올리기",
+    "hero.tag1": "아이돌 집중력",
+    "hero.tag2": "주인공 에너지",
+    "hero.tag3": "에픽 모드",
     "hero.energyLabel": "이 분위기",
     "hero.energy1": "자신감이 느껴지기 전에도 먼저 차분해 보이기.",
     "hero.energy2": "노력이 안 보일 만큼 반복해서 연습하기.",
@@ -99,14 +119,28 @@ const mantras = {
     "Confidence is rehearsal that stopped looking like rehearsal.",
     "Dress clean. Stay calm. Let people wonder.",
     "Charm lands better when discipline is underneath it.",
-    "Less panic. Better posture. Stronger aura."
+    "Less panic. Better posture. Stronger aura.",
+    "Walk in like your timing is perfect.",
+    "Quiet confidence hits harder than loud energy.",
+    "Let your style arrive before your words do.",
+    "Elegance is repetition with taste.",
+    "Hold eye contact. Hold your nerve. Hold the room.",
+    "Be polished enough to look effortless.",
+    "Mystique starts where oversharing ends."
   ],
   ko: [
     "움직임에는 의도를 담고, 말은 줄이고, 존재감은 더하세요.",
     "자신감은 티 나지 않을 정도로 반복한 연습입니다.",
     "깔끔하게 입고, 차분하게 있고, 궁금증은 남기세요.",
     "자기관리가 받쳐줄 때 매력은 더 깊어집니다.",
-    "당황은 줄이고, 자세는 세우고, 아우라는 키우세요."
+    "당황은 줄이고, 자세는 세우고, 아우라는 키우세요.",
+    "등장하는 순간 타이밍이 완벽해 보이게 하세요.",
+    "시끄러운 에너지보다 조용한 자신감이 더 오래 갑니다.",
+    "말보다 먼저 스타일이 도착하게 하세요.",
+    "세련됨은 감각 있는 반복에서 나옵니다.",
+    "눈을 피하지 말고, 마음도 흔들리지 말고, 공간을 잡으세요.",
+    "힘줘 보이지 않는데 완성도는 높게 가세요.",
+    "신비로운 분위기는 과한 설명을 멈출 때 시작됩니다."
   ]
 };
 
@@ -139,6 +173,7 @@ const modeSelect = document.getElementById("mode-select");
 const modeResult = document.getElementById("mode-result");
 const langButtons = document.querySelectorAll(".lang-button");
 const translatableNodes = document.querySelectorAll("[data-i18n]");
+const portraitStage = document.getElementById("portrait-stage");
 
 let currentLang = "en";
 
@@ -176,5 +211,25 @@ langButtons.forEach((button) => {
     updateTranslations(currentLang);
   });
 });
+
+if (portraitStage && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  portraitStage.addEventListener("pointermove", (event) => {
+    const bounds = portraitStage.getBoundingClientRect();
+    const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+    const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+
+    portraitStage.style.setProperty("--tilt-x", `${x * 16}deg`);
+    portraitStage.style.setProperty("--tilt-y", `${y * -16}deg`);
+    portraitStage.style.setProperty("--glow-x", `${50 + x * 18}%`);
+    portraitStage.style.setProperty("--glow-y", `${45 + y * 18}%`);
+  });
+
+  portraitStage.addEventListener("pointerleave", () => {
+    portraitStage.style.removeProperty("--tilt-x");
+    portraitStage.style.removeProperty("--tilt-y");
+    portraitStage.style.removeProperty("--glow-x");
+    portraitStage.style.removeProperty("--glow-y");
+  });
+}
 
 updateTranslations(currentLang);
